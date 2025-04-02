@@ -1,0 +1,27 @@
+{
+  "name": "bookwisetracker",
+  "version": "1.0.0",
+  "description": "A minimalist book tracking app to log books, monitor reading progress, and mark them as completed. Includes a sleek UI with large book covers, hover effects, and dynamic progress bars.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Espadv69/BookWiseTracker.git"
+  },
+  "keywords": [
+    "book tracking",
+    "reading tracker",
+    "progress tracker",
+    "minimalist",
+    "react"
+  ],
+  "author": "AitorDev",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Espadv69/BookWiseTracker/issues"
+  },
+  "homepage": "https://github.com/Espadv69/BookWiseTracker#readme",
+  "private": true
+}
