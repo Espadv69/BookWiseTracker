@@ -1,0 +1,59 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# React
+build/
+public/
+*.log
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+*.log.*
+
+# dotenv environment variables file
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build directories
+/dist
+/.next
+/out
+
+# SASS / CSS
+.sass-cache/
+
+# Coverage
+coverage/
+
+# Operating System files
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Parcel-bundler cache
+.cache/
+.parcel-cache/
+
+# VS Code settings folder
+.vscode/
+
+# Jest
+/coverage/
+
+# Next.js build output
+.next/
