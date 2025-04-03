@@ -26,3 +26,17 @@ const connectDB = async () => {
     process.exit(1)
   }
 }
+
+// Start server 🚀
+const startServer = async () => {
+  // Connect to MongoDB
+  await connectDB()
+
+  // Define Port
+  const PORT = process.env.PORT || 5000
+
+  // Server listening
+  const server = app.listen(PORT, () =>
+    console.log(`Server is running on http://localhost:${PORT} 🚀`),
+  )
+}
