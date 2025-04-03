@@ -1,7 +1,7 @@
 import BOOK_MODEL from '../models/Book.js'
 
 // Get all books 📚
-const getBooks = async (req, res) => {
+export const getBooks = async (req, res) => {
   try {
     // Fetch all books from the database
     const books = await BOOK_MODEL.find()
@@ -13,4 +13,25 @@ const getBooks = async (req, res) => {
       .status(500)
       .json({ message: 'Error fetching books', error: err.message })
   }
+}
+
+// Create a new book 📖
+export const createBook = async (req, res) => {
+  try {
+    // Destructure book data from the request body
+    const { title, totalPages } = req.body
+
+    // Validate required fields
+    if (!title || !totalPages) {
+      return res
+        .status(400)
+        .json({ message: 'Title and total pages are required' })
+    }
+
+    // Create a new book instance
+    const newBook = new BOOK_MODEL({
+      title,
+      totalPages,
+    })
+  } catch (err) {}
 }
