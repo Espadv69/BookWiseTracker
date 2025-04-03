@@ -23,5 +23,8 @@
     "url": "https://github.com/Espadv69/BookWiseTracker/issues"
   },
   "homepage": "https://github.com/Espadv69/BookWiseTracker#readme",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
