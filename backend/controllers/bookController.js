@@ -43,7 +43,7 @@ export const createBook = async (req, res) => {
   }
 }
 
-// Update a book 📖
+// Update a book by ID 📖
 export const updateBook = async (req, res) => {
   try {
     const { id } = req.params
@@ -82,4 +82,21 @@ export const updateBook = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: 'Error updating book', error: err.message })
   }
+}
+
+// Delete a book by ID 📖
+export const deleteBook = async (req, res) => {
+  try {
+    const { id } = req.params
+
+    // Search for the book by ID
+    const book = await BOOK_MODEL.findByIdAndDelete(id)
+
+    // Check if the book exists
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' })
+    }
+
+    res.status(200).json({ message: 'Book deleted successfully' })
+  } catch (err) {}
 }
