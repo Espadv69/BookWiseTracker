@@ -21,3 +21,8 @@ bookSchema.pre('save', function (next) {
   }
   next()
 })
+
+const BOOK_IDENTIFIER = 'Book'
+
+const BOOK_MODEL = mongoose.model(BOOK_IDENTIFIER, bookSchema)
+export default BOOK_MODEL
