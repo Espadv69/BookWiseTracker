@@ -1,8 +1,11 @@
 :root {
   --primary-color: #2E3A59; /* Dark Blue */
-  --secondary-color: #F1F1F1; /* Light Gray */
-  --accent-color: #E74C3C ; /* Red */
+  --secondary-color: #3498DB; /* Blue */
+  --terciary-color: #F1F1F1; /* Light Gray */
+
   --main-text-color: #333333; /* Dark Text */
+
+  --accent-color: #E74C3C ; /* Red */
   --bg-color: #F9F9F9; /* Light Background */
   --progress-bar-color: #27AE60; /* Green */
 }
