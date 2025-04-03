@@ -13,3 +13,11 @@ const bookSchema = new mongoose.Schema({
     default: 'reading',
   },
 })
+
+// Middleware to update progress before saving
+bookSchema.pre('save', function (next) {
+  if (this.totalPages > 0) {
+    this.progress = Math.min((this.currentPage / this.totalPages) * 100, 100)
+  }
+  next()
+})
