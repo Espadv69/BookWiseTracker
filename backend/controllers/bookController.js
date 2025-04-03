@@ -33,5 +33,10 @@ export const createBook = async (req, res) => {
       title,
       totalPages,
     })
+
+    const savedBook = await newBook.save()
+
+    // Send the saved book as JSON response
+    res.status(201).json(savedBook)
   } catch (err) {}
 }
