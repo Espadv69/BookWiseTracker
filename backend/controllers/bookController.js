@@ -79,5 +79,7 @@ export const updateBook = async (req, res) => {
     )
 
     res.status(200).json(updatedBook)
-  } catch (err) {}
+  } catch (err) {
+    res.status(500).json({ message: 'Error updating book', error: err.message })
+  }
 }
