@@ -38,5 +38,7 @@ export const createBook = async (req, res) => {
 
     // Send the saved book as JSON response
     res.status(201).json(savedBook)
-  } catch (err) {}
+  } catch (err) {
+    res.status(500).json({ message: 'Error creating book', error: err.message })
+  }
 }
