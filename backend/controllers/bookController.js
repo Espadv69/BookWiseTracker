@@ -42,3 +42,42 @@ export const createBook = async (req, res) => {
     res.status(500).json({ message: 'Error creating book', error: err.message })
   }
 }
+
+// Update a book 📖
+export const updateBook = async (req, res) => {
+  try {
+    const { id } = req.params
+    const { title, author, coverImage, totalPages, currentPage, status } =
+      req.body
+
+    // Validate if the book exists 👮
+    const book = await BOOK_MODEL.findById(id)
+
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' })
+    }
+
+    // Validate required fields
+    if (!title || !totalPages) {
+      return res
+        .status(400)
+        .json({ message: 'Title and total pages are required' })
+    }
+
+    // Update book details with the provided data
+    const updatedBook = await BOOK_MODEL.findByIdAndUpdate(
+      id,
+      {
+        title,
+        author,
+        coverImage,
+        totalPages,
+        currentPage,
+        status,
+      },
+      { new: true, runValidators: true },
+    )
+
+    res.status(200).json(updatedBook)
+  } catch (err) {}
+}
