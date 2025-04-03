@@ -13,3 +13,16 @@ const app = express()
 // Middleware configuration
 app.use(cors())
 app.use(express.json())
+
+// MongoDB connection 🦋
+const MONGO_URI = process.env.MONGO_URI
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(MONGO_URI)
+    console.log('MongoDB connected successfully 🦋')
+  } catch (err) {
+    console.error('MongoDB connection failed ❌', err.message)
+    process.exit(1)
+  }
+}
