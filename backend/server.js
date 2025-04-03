@@ -33,6 +33,11 @@ const connectDB = async () => {
   }
 }
 
+// Home route
+app.get(HOME_ROUTE, (req, res) => {
+  res.send('Welcome to the Book API! 📚')
+})
+
 // Start server 🚀
 const startServer = async () => {
   // Connect to MongoDB
