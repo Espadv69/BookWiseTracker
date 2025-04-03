@@ -1,3 +1,6 @@
+import { HOME_ROUTE, API_ROUTE } from './utils/const.js'
+import router from './routes/bookRoutes.js'
+
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
@@ -9,6 +12,9 @@ dotenv.config()
 
 // Express app configuration
 const app = express()
+
+// Routes configuration
+app.use(API_ROUTE, router)
 
 // Middleware configuration
 app.use(cors())
