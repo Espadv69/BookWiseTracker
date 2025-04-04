@@ -13,12 +13,12 @@ dotenv.config()
 // Express app configuration
 const app = express()
 
-// Routes configuration
-app.use(API_ROUTE, router)
-
 // Middleware configuration
 app.use(cors())
 app.use(express.json())
+
+// Routes configuration
+app.use(API_ROUTE, router)
 
 // MongoDB connection 🦋
 const MONGO_URI = process.env.MONGO_URI
