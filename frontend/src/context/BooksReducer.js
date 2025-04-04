@@ -22,5 +22,8 @@ export const BooksReducer = (state, action) => {
 
     case DELETE_BOOK:
       return state.filter((book) => book._id !== action.payload)
+
+    default:
+      return state
   }
 }
