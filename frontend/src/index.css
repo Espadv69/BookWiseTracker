@@ -20,4 +20,5 @@
 
 body {
   font-family: 'Inter Variable', sans-serif;
+  background-color: var(--bg-color);
 }
