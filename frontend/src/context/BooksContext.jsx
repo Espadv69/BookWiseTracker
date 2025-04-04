@@ -16,5 +16,16 @@ export const BooksProvider = ({ children }) => {
   const [books, dispatch] = useReducer(BooksReducer, [])
 
   // Load books from the server when the component mounts
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get(AXIOS_API_URL)
+        dispatch({ type: LOAD_BOOKS, payload: response.data })
+      } catch (err) {
+        console.error('Error fetching books:', err)
+      }
+    }
+
+    fetchBooks()
+  }, [])
 }
