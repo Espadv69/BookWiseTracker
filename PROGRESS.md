@@ -1,11 +1,11 @@
 # API REST
 
 <p>
-  <img src="" alt="" />
+  <img src="./progressImages/api-rest.png" alt="Api-Rest data" />
 </p>
 
 # Frontend
 
 <p>
-  <img src="" alt="" />
+  <img src="./progressImages/addBookPage.png" alt="Screenshot from a AddBookPage component, where you can see a form with some input" />
 </p>
