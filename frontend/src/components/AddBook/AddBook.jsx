@@ -61,7 +61,9 @@ const AddBook = () => {
         totalPages: '',
         currentPage: '',
       })
-    } catch (err) {}
+    } catch (err) {
+      console.error('Error adding book:', err.message)
+    }
   }
 }
 
