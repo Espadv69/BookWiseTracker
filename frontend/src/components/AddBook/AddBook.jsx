@@ -22,21 +22,24 @@ const AddBook = () => {
   // State to manage form submission status
   const handleChange = (e) => {
     const { name, value } = e.target
+    console.log(`Input changed: ${name} = ${value}`)
     setFormData((prevData) => ({ ...prevData, [name]: value }))
   }
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-    // Prevent default form submission behavior
     e.preventDefault()
 
-    // Convert form data to the correct types
-    const totalPages = parseInt(formData.totalPages)
-    const currentPage = parseInt(formData.currentPage)
-    const progress = Math.min((currentPage / totalPages) * 100, 100).toFixed(2)
-    const status = progress === '100.00' ? 'Completed' : 'Reading'
+    console.log('Datos antes de enviar:', formData) // DEBUG
 
-    // Create a new book object
+    const totalPages = parseInt(formData.totalPages || '0', 10)
+    const currentPage = parseInt(formData.currentPage || '0', 10)
+    const progress =
+      totalPages > 0
+        ? Math.min((currentPage / totalPages) * 100, 100).toFixed(2)
+        : '0.00'
+    const status = progress === '100.00' ? 'completed' : 'reading'
+
     const newBook = {
       title: formData.title,
       author: formData.author || 'Unknown',
@@ -47,13 +50,13 @@ const AddBook = () => {
       status,
     }
 
+    console.log('Libro a guardar:', newBook) // DEBUG
+
     try {
-      // Send a POST request to add the new book to the database
       const response = await axios.post(AXIOS_API_URL, newBook)
-      // Dispatch the ADD_BOOK action to update the global state
       dispatch({ type: ADD_BOOK, payload: response.data })
 
-      // Clear the form data after submission
+      // Limpiar formulario
       setFormData({
         title: '',
         author: '',
@@ -65,6 +68,58 @@ const AddBook = () => {
       console.error('Error adding book:', err.message)
     }
   }
+
+  return (
+    <section className="add-book__container">
+      <header className="add-book__header">
+        <h2 className="add-book__header--title">Add a New Book</h2>
+      </header>
+
+      <form className="add-book__form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          className="add-book__form--input"
+          placeholder="Enter book title"
+        />
+        <input
+          type="text"
+          name="author"
+          value={formData.author}
+          onChange={handleChange}
+          className="add-book__form--input"
+          placeholder="Enter author"
+        />
+        <input
+          type="text"
+          name="coverImage"
+          value={formData.coverImage}
+          onChange={handleChange}
+          className="add-book__form--input"
+          placeholder="Enter cover image URL"
+        />
+        <input
+          type="text"
+          name="totalPages"
+          value={formData.totalPages}
+          onChange={handleChange}
+          className="add-book__form--input"
+          placeholder="Enter total pages"
+        />
+        <input
+          type="text"
+          name="currentPage"
+          value={formData.currentPage}
+          onChange={handleChange}
+          className="add-book__form--input"
+          placeholder="Enter current page"
+        />
+        <button className="add-book__form--button">Add Book</button>
+      </form>
+    </section>
+  )
 }
 
 export default AddBook
