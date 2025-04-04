@@ -24,6 +24,29 @@ const AddBook = () => {
     const { name, value } = e.target
     setFormData((prevData) => ({ ...prevData, [name]: value }))
   }
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    // Prevent default form submission behavior
+    e.preventDefault()
+
+    // Convert form data to the correct types
+    const totalPages = parseInt(formData.totalPages)
+    const currentPage = parseInt(formData.currentPage)
+    const progress = Math.min((currentPage / totalPages) * 100, 100).toFixed(2)
+    const status = progress === '100.00' ? 'Completed' : 'Reading'
+
+    // Create a new book object
+    const newBook = {
+      title: formData.title,
+      author: formData.author || 'Unknown',
+      coverImage: formData.coverImage || 'No cover image',
+      totalPages,
+      currentPage,
+      progress,
+      status,
+    }
+  }
 }
 
 export default AddBook
