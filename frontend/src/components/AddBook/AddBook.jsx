@@ -18,6 +18,12 @@ const AddBook = () => {
     totalPages: '',
     currentPage: '',
   })
+
+  // State to manage form submission status
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({ ...prevData, [name]: value }))
+  }
 }
 
 export default AddBook
