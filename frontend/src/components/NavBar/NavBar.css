@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #2e3a59;
+  /* Dark Blue */
+  --secondary-color: #3498db;
+  /* Blue */
+  --terciary-color: #f1f1f1;
+  /* Light Gray */
+  --main-text-color: #333333;
+  /* Dark Text */
+  --accent-color: #e74c3c;
+  /* Red */
+  --bg-color: #f9f9f9;
+  /* Light Background */
+  --progress-bar-color: #27ae60;
+  /* Green */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--terciary-color);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav__link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.nav__link:hover {
+  color: var(--accent-color);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
