@@ -18,25 +18,33 @@ export const getBooks = async (req, res) => {
 // Create a new book 📖
 export const createBook = async (req, res) => {
   try {
-    // Destructure book data from the request body
-    const { title, totalPages } = req.body
+    const {
+      title,
+      author,
+      coverImage,
+      totalPages,
+      currentPage,
+      progress,
+      status,
+    } = req.body
 
-    // Validate required fields
     if (!title || !totalPages) {
       return res
         .status(400)
         .json({ message: 'Title and total pages are required' })
     }
 
-    // Create a new book instance
     const newBook = new BOOK_MODEL({
       title,
-      totalPages,
+      author,
+      coverImage,
+      totalPages: Number(totalPages),
+      currentPage: Number(currentPage),
+      progress: Number(progress),
+      status,
     })
 
     const savedBook = await newBook.save()
-
-    // Send the saved book as JSON response
     res.status(201).json(savedBook)
   } catch (err) {
     res.status(500).json({ message: 'Error creating book', error: err.message })
