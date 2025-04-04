@@ -46,6 +46,22 @@ const AddBook = () => {
       progress,
       status,
     }
+
+    try {
+      // Send a POST request to add the new book to the database
+      const response = await axios.post(AXIOS_API_URL, newBook)
+      // Dispatch the ADD_BOOK action to update the global state
+      dispatch({ type: ADD_BOOK, payload: response.data })
+
+      // Clear the form data after submission
+      setFormData({
+        title: '',
+        author: '',
+        coverImage: '',
+        totalPages: '',
+        currentPage: '',
+      })
+    } catch (err) {}
   }
 }
 
