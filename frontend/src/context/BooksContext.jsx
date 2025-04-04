@@ -1,14 +1,8 @@
-import axios from 'axios'
-
 import { createContext, useReducer, useEffect } from 'react'
 import { BooksReducer } from './BooksReducer.js'
 import { AXIOS_API_URL } from '../utils/const.js'
-import {
-  LOAD_BOOKS,
-  ADD_BOOK,
-  UPDATE_BOOK,
-  DELETE_BOOK,
-} from './actionTypes.js'
+import { LOAD_BOOKS } from './actionTypes.js'
+import axios from 'axios'
 
 export const BooksContext = createContext()
 
@@ -28,4 +22,10 @@ export const BooksProvider = ({ children }) => {
 
     fetchBooks()
   }, [])
+
+  return (
+    <BooksContext.Provider value={{ books, dispatch }}>
+      {children}
+    </BooksContext.Provider>
+  )
 }
