@@ -76,46 +76,66 @@ const AddBook = () => {
       </header>
 
       <form className="add-book__form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
-          className="add-book__form--input"
-          placeholder="Enter book title"
-        />
-        <input
-          type="text"
-          name="author"
-          value={formData.author}
-          onChange={handleChange}
-          className="add-book__form--input"
-          placeholder="Enter author"
-        />
-        <input
-          type="text"
-          name="coverImage"
-          value={formData.coverImage}
-          onChange={handleChange}
-          className="add-book__form--input"
-          placeholder="Enter cover image URL"
-        />
-        <input
-          type="text"
-          name="totalPages"
-          value={formData.totalPages}
-          onChange={handleChange}
-          className="add-book__form--input"
-          placeholder="Enter total pages"
-        />
-        <input
-          type="text"
-          name="currentPage"
-          value={formData.currentPage}
-          onChange={handleChange}
-          className="add-book__form--input"
-          placeholder="Enter current page"
-        />
+        <label className="add-book__form--label">
+          Title
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            className="add-book__form--input"
+            placeholder="Enter book title"
+          />
+        </label>
+
+        <label className="add-book__form--label">
+          Author
+          <input
+            type="text"
+            name="author"
+            value={formData.author}
+            onChange={handleChange}
+            className="add-book__form--input"
+            placeholder="Enter author"
+          />
+        </label>
+
+        <label className="add-book__form--label">
+          Cover Image URL
+          <input
+            type="text"
+            name="coverImage"
+            value={formData.coverImage}
+            onChange={handleChange}
+            className="add-book__form--input"
+            placeholder="Enter cover image URL"
+          />
+        </label>
+
+        <label className="add-book__form--label">
+          Total Pages
+          <input
+            type="text"
+            name="totalPages"
+            value={formData.totalPages}
+            onChange={handleChange}
+            className="add-book__form--input"
+            placeholder="Enter total pages"
+          />
+        </label>
+
+        <label className="add-book__form--label">
+          Current Page
+          <input
+            type="text"
+            name="currentPage"
+            value={formData.currentPage}
+            onChange={handleChange}
+            className="add-book__form--input"
+            placeholder="Enter current page"
+          />
+        </label>
+
         <button className="add-book__form--button">Add Book</button>
       </form>
     </section>
