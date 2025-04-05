@@ -1,3 +1,4 @@
+import ProgressBar from '../ProgressBar/ProgressBar'
 import './BookCard.css'
 
 const BookCard = ({
@@ -31,7 +32,7 @@ const BookCard = ({
         </p>
 
         <div className="book-card__progress">
-          {/* ToDo: Add Progress Bar */}
+          <ProgressBar progress={progress} />
           <p className="book-card__pages">
             {currentPage} of {totalPages} pages
           </p>
