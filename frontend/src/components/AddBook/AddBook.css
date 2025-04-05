@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #2e3a59;     /* Dark Blue */
-  --secondary-color: #3498db;   /* Blue */
-  --terciary-color: #f1f1f1;    /* Light Gray */
+  --primary-color: #2e3a59; /* Dark Blue */
+  --secondary-color: #3498db; /* Blue */
+  --terciary-color: #f1f1f1; /* Light Gray */
 
-  --main-text-color: #333333;   /* Dark Text */
-  --accent-color: #e74c3c;      /* Red */
-  --bg-color: #f9f9f9;          /* Light Background */
+  --main-text-color: #333333; /* Dark Text */
+  --accent-color: #e74c3c; /* Red */
+  --bg-color: #f9f9f9; /* Light Background */
   --progress-bar-color: #27ae60; /* Green */
 }
 
