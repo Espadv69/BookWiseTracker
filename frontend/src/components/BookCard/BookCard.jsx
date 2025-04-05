@@ -27,7 +27,7 @@ const BookCard = ({
       <main className="book-card__info">
         <h3 className="book-card__title">{title}</h3>
         <p className="book-card__author">
-          {author ? author : 'Unknown Author'}
+          {author ? `By ${author}` : 'Unknown Author'}
         </p>
 
         <div className="book-card__progress">
