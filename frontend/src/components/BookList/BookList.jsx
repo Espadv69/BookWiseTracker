@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { BooksContext } from '../../context/BooksContext'
+
 import BookCard from '../BookCard/BookCard'
 import './BookList.css'
 
