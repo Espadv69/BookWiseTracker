@@ -7,10 +7,9 @@ const BookCard = ({
   coverImage,
   totalPages,
   currentPage,
-  progress,
   status,
 }) => {
-  const progress =
+  const progressMath =
     totalPages > 0 ? Math.floor((currentPage / totalPages) * 100) : 0
 
   return (
@@ -32,7 +31,7 @@ const BookCard = ({
         </p>
 
         <div className="book-card__progress">
-          <ProgressBar progress={progress} />
+          <ProgressBar progress={progressMath} />
           <p className="book-card__pages">
             {currentPage} of {totalPages} pages
           </p>
