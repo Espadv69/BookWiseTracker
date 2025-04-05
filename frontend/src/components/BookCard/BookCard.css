@@ -1,0 +1,76 @@
+.book-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--terciary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+}
+
+.book-card__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.book-card__coverImage {
+  width: 150px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-card__info {
+  text-align: center;
+}
+
+.book-card__title {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.book-card__author {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.book-card__progress {
+  margin: 1rem 0;
+}
+
+.book-card__pages {
+  font-size: 0.9rem;
+  color: var(--main-text-color);
+  margin-top: 0.5rem;
+}
+
+.book-card__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.book-card__status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.book-card__status.completed {
+  background-color: var(--progress-bar-color);
+}
+
+.book-card__status.reading {
+  background-color: var(--accent-color);
+}
