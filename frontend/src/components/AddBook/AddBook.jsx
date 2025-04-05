@@ -42,8 +42,8 @@ const AddBook = () => {
 
     const newBook = {
       title: formData.title,
-      author: formData.author || 'Unknown',
-      coverImage: formData.coverImage || 'No cover image',
+      author: formData.author,
+      coverImage: formData.coverImage,
       totalPages,
       currentPage,
       progress,
