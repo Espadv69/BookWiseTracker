@@ -18,7 +18,10 @@ const bookSchema = new mongoose.Schema({
 bookSchema.pre('save', function (next) {
   if (this.totalPages > 0) {
     this.progress = Math.min((this.currentPage / this.totalPages) * 100, 100)
+  } else if (this.currentPage === totalPages) {
+    this.progress = 100
   }
+  this.progress = Math.max(0, Math.min(this.progress || 0, 100))
   next()
 })
 
