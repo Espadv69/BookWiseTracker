@@ -47,3 +47,21 @@
 .nav__link:hover::after {
   width: 100%;
 }
+
+@media (max-width: 660px) {
+  .nav {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .nav h3 {
+    font-size: 1.2rem;
+  }
+
+  .links {
+    gap: 1rem;
+  }
+
+  .nav__link {
+    font-size: 0.9rem;
+  }
+}
