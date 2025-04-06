@@ -21,8 +21,6 @@ const Home = () => {
         ).toFixed(2)
       : 0
 
-  const latestBooks = [...books].slice(-3).reverse()
-
   return (
     <div className="home">
       <section className="home__welcome">
