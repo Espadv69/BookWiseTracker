@@ -72,3 +72,51 @@
   font-weight: bold;
   color: var(--accent-color);
 }
+
+@media (max-width: 600px) {
+  .home {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .home__welcome {
+    margin-bottom: 1rem;
+  }
+
+  .home__welcome h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .home__welcome p {
+    font-size: 1rem;
+  }
+
+  .home__stats h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .home__stats__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .home__stats__card {
+    padding: 1rem;
+    min-height: 120px;
+    border-radius: 12px;
+  }
+
+  .home__stats__card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .home__stats__card p {
+    font-size: 1.5rem;
+  }
+}
