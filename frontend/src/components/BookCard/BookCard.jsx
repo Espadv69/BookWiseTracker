@@ -34,7 +34,7 @@ const BookCard = ({
   const handleToggleStatus = async () => {
     // Provisional confirmation
     const confirm = window.confirm(
-      `Are you sure you want to change the status of "${title}"?`,
+      `Are you sure you want to change the status of\n"${title}"?`,
     )
     if (!confirm) return
 
