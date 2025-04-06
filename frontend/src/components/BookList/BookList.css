@@ -59,8 +59,44 @@
   margin-top: 4rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 660px) {
+  .book-list {
+    padding: 0.5rem;
+  }
+
+  .book-list__title {
+    font-size: 1.5rem;
+  }
+
+  .book-list__count {
+    font-size: 0.9rem;
+  }
+
   .book-list__grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    height: auto;
+    max-height: 70dvh;
+    overflow-y: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .book-list__grid::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .book-list__grid::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+  }
+
+  .book-list__header {
+    margin-bottom: 0.8rem;
+  }
+
+  .book-list__empty {
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
   }
 }
