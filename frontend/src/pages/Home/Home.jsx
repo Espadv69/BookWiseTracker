@@ -49,6 +49,24 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className="home__books">
+        <h2>Your Books</h2>
+        {books.length > 0 ? (
+          <ul className="home__books__list">
+            {books.map((book) => (
+              <li key={book.id} className="home__books__item">
+                <h3>{book.title}</h3>
+                <p>{book.author}</p>
+                <p>Status: {book.status}</p>
+                <p>Progress: {book.progress}%</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No books found. Start adding some!</p>
+        )}
+      </section>
     </div>
   )
 }
