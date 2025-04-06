@@ -83,6 +83,38 @@
   flex-wrap: wrap;
 }
 
+.custom-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.custom-arrows {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  justify-content: center;
+  gap: 2px;
+}
+
+.custom-arrows button {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+  background-color: transparent;
+  padding: 0 2px;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.custom-arrows button:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
 .book-card__input {
   width: 80px;
   padding: 0.4rem 0.6rem;
