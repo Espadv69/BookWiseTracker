@@ -192,4 +192,29 @@
   .home__stats__card p {
     font-size: 1.5rem;
   }
+
+  .home__books {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .home__books h2 {
+    font-size: 1.4rem;
+  }
+
+  .home__books__list {
+    max-height: 200px;
+  }
+
+  .home__books__item {
+    padding: 1rem;
+  }
+
+  .home__books__item h3 {
+    font-size: 1rem;
+  }
+
+  .home__books__item p {
+    font-size: 0.9rem;
+  }
 }
