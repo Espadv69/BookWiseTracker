@@ -19,10 +19,12 @@ const AddBook = () => {
     currentPage: '',
   })
 
+  // State to manage error messages
+  const [error, setError] = useState('')
+
   // State to manage form submission status
   const handleChange = (e) => {
     const { name, value } = e.target
-    console.log(`Input changed: ${name} = ${value}`)
     setFormData((prevData) => ({ ...prevData, [name]: value }))
   }
 
@@ -39,6 +41,9 @@ const AddBook = () => {
         ? Math.min((currentPage / totalPages) * 100, 100).toFixed(2)
         : '0.00'
     const status = progress === '100.00' ? 'completed' : 'reading'
+
+    if (!formData.title) return setError('Title is required')
+    if (!formData.totalPages) return setError('Total pages are required')
 
     const newBook = {
       title: formData.title,
@@ -136,6 +141,7 @@ const AddBook = () => {
           />
         </label>
 
+        {error && <p className="add-book__form--error">{error}</p>}
         <button className="add-book__form--button">Add Book</button>
       </form>
     </section>
