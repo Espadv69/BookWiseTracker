@@ -23,11 +23,10 @@
 }
 
 .book-list__grid {
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
   justify-content: center;
 }
 
@@ -36,4 +35,10 @@
   color: var(--accent-color);
   text-align: center;
   margin-top: 4rem;
+}
+
+@media (max-width: 500px) {
+  .book-list__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
