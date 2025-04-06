@@ -115,14 +115,24 @@ const BookCard = ({
         </div>
 
         <div className="book-card__update">
-          <input
-            type="number"
-            value={newPage}
-            min={0}
-            max={totalPages}
-            onChange={(e) => setNewPage(Number(e.target.value))}
-            className="book-card__input"
-          />
+          <div className="custom-input-wrapper">
+            <input
+              type="number"
+              value={newPage}
+              min={0}
+              max={totalPages}
+              onChange={(e) => setNewPage(Number(e.target.value))}
+              className="book-card__input no-spin"
+            />
+            <div className="custom-arrows">
+              <button onClick={() => setNewPage((prev) => prev + 1)}>▲</button>
+              <button
+                onClick={() => setNewPage((prev) => Math.max(prev - 1, 0))}
+              >
+                ▼
+              </button>
+            </div>
+          </div>
           <button
             onClick={handlePageUpdate}
             className="book-card__btn"
