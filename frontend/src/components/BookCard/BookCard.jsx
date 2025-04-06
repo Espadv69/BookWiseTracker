@@ -49,18 +49,17 @@ const BookCard = ({
   const handlePageUpdate = async () => {
     const safePage = Math.min(newPage, totalPages)
 
-    if (safePage < 0 || safePage > totalPages) {
-      console.error('Invalid page number')
+    if (safePage < 0) {
+      console.error('Page number cannot be negative')
       return
     }
 
     try {
       const response = await axios.put(`${AXIOS_API_URL}/${_id}`, {
         currentPage: safePage,
-        progress: Math.floor((safePage / totalPages) * 100),
       })
       dispatch({ type: 'UPDATE_BOOK', payload: response.data })
-      setNewPage(safePage)
+      setNewPage(response.data.currentPage)
     } catch (err) {
       console.error('Error updating book:', err.message)
     }
@@ -90,16 +89,39 @@ const BookCard = ({
             {currentPage} of {totalPages} pages
           </p>
         </div>
+
+        <div className="book-card__update">
+          <input
+            type="number"
+            value={newPage}
+            min={0}
+            max={totalPages}
+            onChange={(e) => setNewPage(Number(e.target.value))}
+            className="book-card__input"
+          />
+          <button
+            onClick={handlePageUpdate}
+            className="book-card__btn"
+            disabled={newPage === currentPage || newPage < 0}
+          >
+            Update Page
+          </button>
+        </div>
       </main>
 
       <footer className="book-card__footer">
-        <p
-          className={`book-card__status ${
-            status === 'completed' ? 'completed' : 'reading'
-          }`}
-        >
+        <p className={`book-card__status ${status}`}>
           {status === 'completed' ? 'Completed' : 'Reading'}
         </p>
+
+        <div className="book-card__actions">
+          <button className="book-card__btn" onClick={handleToggleStatus}>
+            Toggle Status
+          </button>
+          <button className="book-card__btn delete" onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
       </footer>
     </section>
   )
