@@ -27,7 +27,21 @@ const BookCard = ({
       await axios.delete(`${AXIOS_API_URL}/${_id}`)
       dispatch({ type: 'DELETE_BOOK', payload: _id })
     } catch (err) {
-      console.error('Error deleting book:', err)
+      console.error('Error deleting book:', err.message)
+    }
+  }
+
+  // Functio to handle Status
+  const handleToggleStatus = async () => {
+    const newStatus = status === 'reading' ? 'completed' : 'reading'
+
+    try {
+      const response = await axios.put(`${AXIOS_API_URL}/${_id}`, {
+        status: newStatus,
+      })
+      dispatch({ type: 'UPDATE_BOOK', payload: response.data })
+    } catch (err) {
+      console.error('Error updating book status:', err.message)
     }
   }
 
