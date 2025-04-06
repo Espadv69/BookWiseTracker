@@ -50,6 +50,10 @@ const BookCard = ({
     try {
       const response = await axios.put(`${AXIOS_API_URL}/${_id}`, updatedFields)
       dispatch({ type: 'UPDATE_BOOK', payload: response.data })
+
+      if (response.data.currentPage !== undefined) {
+        setNewPage(response.data.currentPage)
+      }
     } catch (err) {
       console.error('Error updating book status:', err.message)
     }
