@@ -55,10 +55,9 @@ export const createBook = async (req, res) => {
 export const updateBook = async (req, res) => {
   try {
     const { id } = req.params
-    const updateData = req.body
+    let updateData = req.body
 
     const book = await BOOK_MODEL.findById(id)
-
     if (!book) {
       return res.status(404).json({ message: 'Book not found' })
     }
@@ -68,6 +67,25 @@ export const updateBook = async (req, res) => {
     }
     if ('totalPages' in updateData && !updateData.totalPages) {
       return res.status(400).json({ message: 'Total pages cannot be empty' })
+    }
+
+    const currentPage =
+      updateData.currentPage !== undefined
+        ? updateData.currentPage
+        : book.currentPage
+    const totalPages =
+      updateData.totalPages !== undefined
+        ? updateData.totalPages
+        : book.totalPages
+
+    if ('currentPage' in updateData || 'totalPages' in updateData) {
+      const progress = Math.min((currentPage / totalPages) * 100, 100)
+      updateData = {
+        ...updateData,
+        currentPage,
+        totalPages,
+        progress: Math.max(0, progress),
+      }
     }
 
     const updatedBook = await BOOK_MODEL.findByIdAndUpdate(id, updateData, {
