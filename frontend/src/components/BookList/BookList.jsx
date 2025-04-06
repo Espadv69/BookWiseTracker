@@ -22,6 +22,7 @@ const BookList = () => {
         {books.map((book) => (
           <BookCard
             key={book._id}
+            _id={book._id}
             title={book.title}
             author={book.author}
             coverImage={book.coverImage}
