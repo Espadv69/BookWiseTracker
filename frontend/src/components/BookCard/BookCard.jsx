@@ -1,3 +1,8 @@
+import { useContext, useState } from 'react'
+import { BooksContext } from '../../context/BooksContext'
+import { AXIOS_API_URL } from '../../utils/const'
+import axios from 'axios'
+
 import ProgressBar from '../ProgressBar/ProgressBar'
 import './BookCard.css'
 
