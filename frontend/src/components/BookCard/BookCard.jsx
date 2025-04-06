@@ -30,14 +30,25 @@ const BookCard = ({
     }
   }
 
-  // Functio to handle Status
+  // Function to handle Status
   const handleToggleStatus = async () => {
     const newStatus = status === 'reading' ? 'completed' : 'reading'
 
+    const updatedFields =
+      newStatus === 'completed'
+        ? {
+            status: newStatus,
+            currentPage: totalPages,
+            progress: 100,
+          }
+        : {
+            status: newStatus,
+            currentPage: 0,
+            progress: 0,
+          }
+
     try {
-      const response = await axios.put(`${AXIOS_API_URL}/${_id}`, {
-        status: newStatus,
-      })
+      const response = await axios.put(`${AXIOS_API_URL}/${_id}`, updatedFields)
       dispatch({ type: 'UPDATE_BOOK', payload: response.data })
     } catch (err) {
       console.error('Error updating book status:', err.message)
