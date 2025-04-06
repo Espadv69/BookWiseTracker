@@ -69,3 +69,9 @@
 .add-book__form--button:hover {
   background-color: var(--primary-color);
 }
+
+.add-book__form--error {
+  text-align: center;
+  color: var(--accent-color);
+  margin-top: 0.2rem;
+}
