@@ -15,9 +15,7 @@ export const BooksReducer = (state, action) => {
 
     case UPDATE_BOOK:
       return state.map((book) =>
-        book._id === action.payload.id
-          ? { ...book, currentPage: action.payload.currentPage }
-          : book,
+        book._id === action.payload._id ? action.payload : book,
       )
 
     case DELETE_BOOK:
