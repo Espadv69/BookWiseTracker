@@ -59,7 +59,7 @@ const Home = () => {
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
                 <p>Status: {book.status}</p>
-                <p>Progress: {(book.progress).toFixed(2)}%</p>
+                <p>Progress: {book.progress.toFixed(2)}%</p>
               </li>
             ))}
           </ul>
