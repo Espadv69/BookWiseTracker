@@ -23,6 +23,7 @@
 }
 
 .book-list__grid {
+  padding: .4rem;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
