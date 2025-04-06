@@ -118,6 +118,7 @@ const BookCard = ({
           <input
             type="number"
             value={newPage}
+            min={0}
             max={totalPages}
             onChange={(e) => setNewPage(Number(e.target.value))}
             className="book-card__input"
