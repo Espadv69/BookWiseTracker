@@ -21,6 +21,16 @@ const BookCard = ({
   const progressMath =
     totalPages > 0 ? Math.floor((currentPage / totalPages) * 100) : 0
 
+  // Function to handle deleting a book
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`${AXIOS_API_URL}/${_id}`)
+      dispatch({ type: 'DELETE_BOOK', payload: _id })
+    } catch (err) {
+      console.error('Error deleting book:', err)
+    }
+  }
+
   return (
     <section className="book-card">
       <header className="book-card__header">
