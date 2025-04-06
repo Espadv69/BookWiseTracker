@@ -73,9 +73,12 @@ const BookCard = ({
       return
     }
 
+    const shouldBeReading = safePage < totalPages && status === 'completed'
+
     try {
       const response = await axios.put(`${AXIOS_API_URL}/${_id}`, {
         currentPage: safePage,
+        ...(shouldBeReading && { status: 'reading' }),
       })
       dispatch({ type: 'UPDATE_BOOK', payload: response.data })
       setNewPage(response.data.currentPage)
