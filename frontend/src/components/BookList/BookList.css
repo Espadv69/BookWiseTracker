@@ -33,6 +33,25 @@
   overflow-y: auto;
 }
 
+.book-list__grid::-webkit-scrollbar {
+  width: 10px;
+}
+
+.book-list__grid::-webkit-scrollbar-track {
+  background: var(--terciary-color);
+  border-radius: 5px;
+}
+
+.book-list__grid::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  border: 2px solid var(--terciary-color);
+}
+
+.book-list__grid::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
 .book-list__empty {
   font-size: 1.2rem;
   color: var(--accent-color);
