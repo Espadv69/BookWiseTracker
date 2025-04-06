@@ -18,8 +18,7 @@ const BookCard = ({
   const { dispatch } = useContext(BooksContext)
   const [newPage, setNewPage] = useState(currentPage)
 
-  const progressMath =
-    totalPages > 0 ? Math.floor((currentPage / totalPages) * 100) : 0
+  const progressMath = totalPages > 0 ? (currentPage / totalPages) * 100 : 0
 
   // Function to handle deleting a book
   const handleDelete = async () => {
