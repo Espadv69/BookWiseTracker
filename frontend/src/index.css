@@ -26,4 +26,6 @@
 body {
   font-family: 'Inter Variable', sans-serif;
   background-color: var(--bg-color);
+  height: 100%;
+  overflow: hidden;
 }
