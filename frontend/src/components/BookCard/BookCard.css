@@ -99,6 +99,13 @@
   border-color: var(--secondary-color);
 }
 
+/* Chrome, Safari, Edge, Opera */
+.book-card__input::-webkit-outer-spin-button,
+.book-card__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .book-card__btn {
   padding: 0.4rem 0.8rem;
   border: none;
