@@ -55,36 +55,25 @@ export const createBook = async (req, res) => {
 export const updateBook = async (req, res) => {
   try {
     const { id } = req.params
-    const { title, author, coverImage, totalPages, currentPage, status } =
-      req.body
+    const updateData = req.body
 
-    // Validate if the book exists 👮
     const book = await BOOK_MODEL.findById(id)
 
     if (!book) {
       return res.status(404).json({ message: 'Book not found' })
     }
 
-    // Validate required fields
-    if (!title || !totalPages) {
-      return res
-        .status(400)
-        .json({ message: 'Title and total pages are required' })
+    if ('title' in updateData && !updateData.title) {
+      return res.status(400).json({ message: 'Title cannot be empty' })
+    }
+    if ('totalPages' in updateData && !updateData.totalPages) {
+      return res.status(400).json({ message: 'Total pages cannot be empty' })
     }
 
-    // Update book details with the provided data
-    const updatedBook = await BOOK_MODEL.findByIdAndUpdate(
-      id,
-      {
-        title,
-        author,
-        coverImage,
-        totalPages,
-        currentPage,
-        status,
-      },
-      { new: true, runValidators: true },
-    )
+    const updatedBook = await BOOK_MODEL.findByIdAndUpdate(id, updateData, {
+      new: true,
+      runValidators: true,
+    })
 
     res.status(200).json(updatedBook)
   } catch (err) {
