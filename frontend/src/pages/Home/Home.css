@@ -1,0 +1,66 @@
+.home {
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--main-text-color);
+}
+
+.home__welcome {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home__welcome h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.home__welcome p {
+  font-size: 1.1rem;
+  color: var(--main-text-color);
+}
+
+.home__stats {
+  text-align: center;
+}
+
+.home__stats h2 {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.home__stats__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.home__stats__card {
+  background-color: white;
+  border: 1px solid var(--terciary-color);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home__stats__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home__stats__card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.home__stats__card p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
