@@ -74,3 +74,63 @@
 .book-card__status.reading {
   background-color: var(--accent-color);
 }
+
+.book-card__update {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.book-card__input {
+  width: 80px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--terciary-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: white;
+  color: var(--main-text-color);
+  transition: border-color 0.2s ease;
+}
+
+.book-card__input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.book-card__btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.book-card__btn:hover {
+  background-color: #1f2b44; /* darken primary-color */
+}
+
+.book-card__btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.book-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.book-card__btn.delete {
+  background-color: var(--accent-color);
+}
+
+.book-card__btn.delete:hover {
+  background-color: #c0392b; /* darken red */
+}
