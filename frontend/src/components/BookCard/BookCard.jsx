@@ -45,6 +45,27 @@ const BookCard = ({
     }
   }
 
+  // Function to handle updating the current page
+  const handlePageUpdate = async () => {
+    const safePage = Math.min(newPage, totalPages)
+
+    if (safePage < 0 || safePage > totalPages) {
+      console.error('Invalid page number')
+      return
+    }
+
+    try {
+      const response = await axios.put(`${AXIOS_API_URL}/${_id}`, {
+        currentPage: safePage,
+        progress: Math.floor((safePage / totalPages) * 100),
+      })
+      dispatch({ type: 'UPDATE_BOOK', payload: response.data })
+      setNewPage(safePage)
+    } catch (err) {
+      console.error('Error updating book:', err.message)
+    }
+  }
+
   return (
     <section className="book-card">
       <header className="book-card__header">
