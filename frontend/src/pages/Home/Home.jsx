@@ -23,6 +23,37 @@ const Home = () => {
       : 0
 
   const latestBooks = [...books].slice(-3).reverse()
+
+  return (
+    <div className="home">
+      <section className="home__welcome">
+        <h1>Welcome to Your Library 📖</h1>
+        <p>Track your reading, manage your books, and reach your goals!</p>
+      </section>
+
+      <section className="home__stats">
+        <h2>Your Reading Stats</h2>
+        <div className="home__stats__cards">
+          <div className="home__stats__card">
+            <h3>Total Books</h3>
+            <p>{totalBooks}</p>
+          </div>
+          <div className="home__stats__card">
+            <h3>Reading</h3>
+            <p>{readingBooks}</p>
+          </div>
+          <div className="home__stats__card">
+            <h3>Completed</h3>
+            <p>{completedBooks}</p>
+          </div>
+          <div className="home__stats__card">
+            <h3>Overall Progress</h3>
+            <p>{overallProgress}%</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
 }
 
 export default Home
