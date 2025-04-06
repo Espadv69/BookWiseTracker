@@ -7,6 +7,7 @@ import ProgressBar from '../ProgressBar/ProgressBar'
 import './BookCard.css'
 
 const BookCard = ({
+  _id,
   title,
   author,
   coverImage,
@@ -14,6 +15,9 @@ const BookCard = ({
   currentPage,
   status,
 }) => {
+  const { dispatch } = useContext(BooksContext)
+  const [newPage, setNewPage] = useState(currentPage)
+
   const progressMath =
     totalPages > 0 ? Math.floor((currentPage / totalPages) * 100) : 0
 
