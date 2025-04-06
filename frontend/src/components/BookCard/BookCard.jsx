@@ -32,8 +32,13 @@ const BookCard = ({
 
   // Function to handle Status
   const handleToggleStatus = async () => {
-    const newStatus = status === 'reading' ? 'completed' : 'reading'
+    // Provisional confirmation
+    const confirm = window.confirm(
+      `Are you sure you want to change the status of "${title}"?`,
+    )
+    if (!confirm) return
 
+    const newStatus = status === 'reading' ? 'completed' : 'reading'
     const updatedFields =
       newStatus === 'completed'
         ? {
