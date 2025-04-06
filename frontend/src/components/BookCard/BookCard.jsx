@@ -89,6 +89,25 @@ const BookCard = ({
     }
   }
 
+  // Function to handle mouse
+  const handleMouse = (direction) => {
+    const interval = setInterval(() => {
+      setNewPage((prev) => {
+        const nextPage = direction === 'up' ? prev + 1 : prev - 1
+        return nextPage
+      })
+    }, 100)
+
+    const stop = () => {
+      clearInterval(interval)
+      document.removeEventListener('mouseup', stop)
+      document.removeEventListener('mouseleave', stop)
+    }
+
+    document.addEventListener('mouseup', stop)
+    document.addEventListener('mouseleave', stop)
+  }
+
   return (
     <section className="book-card">
       <header className="book-card__header">
@@ -125,8 +144,14 @@ const BookCard = ({
               className="book-card__input no-spin"
             />
             <div className="custom-arrows">
-              <button onClick={() => setNewPage((prev) => prev + 1)}>▲</button>
               <button
+                onMouseDown={() => handleMouse('up')}
+                onClick={() => setNewPage((prev) => prev + 1)}
+              >
+                ▲
+              </button>
+              <button
+                onMouseDown={() => handleMouse('down')}
                 onClick={() => setNewPage((prev) => Math.max(prev - 1, 0))}
               >
                 ▼
