@@ -20,21 +20,21 @@ A minimalist **book tracking app** that lets users log books, track progress, an
 ### Frontend
 
 <p>
-  <img src="" alt="Home page" />
+  <img src="./progressImages/homePage.png" alt="Home page" />
 </p>
 
 <p>
-  <img src="" alt="Add Book page" />
+  <img src="./progressImages/addBookPage.png" alt="Add Book page" />
 </p>
 
 <p>
-  <img src="" alt="Book Details page" />
+  <img src="./progressImages/bookDetailsPage.png" alt="Book Details page" />
 </p>
 
 ### API Rest 🗞️
 
 <p>
-  <img src="" alt="Api-Rest data" />
+  <img src="./progressImages/api-rest.png" alt="Api-Rest data" />
 </p>
 
 ## 📦 Installation
