@@ -31,6 +31,10 @@ A minimalist **book tracking app** that lets users log books, track progress, an
   <img src="./progressImages/bookDetailsPage.png" alt="Book Details page" />
 </p>
 
+<p>
+  <img src="./progressImages/not-foundPage.png" alt="Not Found page" />
+</p>
+
 ### API Rest 🗞️
 
 <p>
