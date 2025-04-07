@@ -55,7 +55,7 @@ const Home = () => {
         {books.length > 0 ? (
           <ul className="home__books__list">
             {books.map((book) => (
-              <li key={book.id} className="home__books__item">
+              <li key={book._id} className="home__books__item">
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
                 <p>Status: {book.status}</p>
