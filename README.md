@@ -15,6 +15,28 @@ A minimalist **book tracking app** that lets users log books, track progress, an
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
 
+## 👁️ Screenshots
+
+### Frontend
+
+<p>
+  <img src="" alt="Home page" />
+</p>
+
+<p>
+  <img src="" alt="Add Book page" />
+</p>
+
+<p>
+  <img src="" alt="Book Details page" />
+</p>
+
+### API Rest 🗞️
+
+<p>
+  <img src="" alt="Api-Rest data" />
+</p>
+
 ## 📦 Installation
 
 1. Clone this repository:
